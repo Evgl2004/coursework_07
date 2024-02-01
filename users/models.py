@@ -16,7 +16,7 @@ class User(AbstractUser):
     username = None
 
     email = models.EmailField(unique=True, verbose_name='почта')
-    chat_id = models.IntegerField(unique=True, max_length=15, verbose_name='идентификатор телеграм')
+    chat_id = models.IntegerField(unique=True, verbose_name='идентификатор телеграм')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
