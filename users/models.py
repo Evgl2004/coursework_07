@@ -9,6 +9,9 @@ class User(AbstractUser):
         Поля:
             - email: Адрес электронной почты пользователя (уникальный).
             - chat_id: Поле для хранения идентификатора мессенджера Телеграм.
+
+        Методы:
+            - __str__: Возвращает описание привычки в виде строки.
     """
     username = None
 
@@ -17,6 +20,9 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+    def __str__(self):
+        return f"{self.email}"
 
     class Meta:
         verbose_name = 'пользователь'

@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Yekaterinburg'
 
 USE_I18N = True
 
@@ -187,7 +187,7 @@ CELERY_BROKER_URL = bool(getenv('CELERY_BROKER_URL')) # Например, Redis,
 CELERY_RESULT_BACKEND = bool(getenv('CELERY_RESULT_BACKEND'))
 
 # Часовой пояс для работы Celery
-CELERY_TIMEZONE = "Australia/Tasmania"
+CELERY_TIMEZONE = "Asia/Yekaterinburg"
 
 # Флаг отслеживания выполнения задач
 CELERY_TASK_TRACK_STARTED = True
