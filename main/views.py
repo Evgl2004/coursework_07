@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from main.models import UsefulHabit
 from main.serializers import UsefulHabitSerializer
 from main.permissions import IsOwner
+from main.paginators import MainPaginator
 
 
 class UsefulHabitCreateAPIView(generics.CreateAPIView):
@@ -13,6 +14,7 @@ class UsefulHabitCreateAPIView(generics.CreateAPIView):
 class UsefulHabitListAPIView(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = UsefulHabitSerializer
+    pagination_class = MainPaginator
 
     def get_queryset(self):
         return UsefulHabit.objects.filter(owner=self.request.user)
